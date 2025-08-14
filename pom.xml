@@ -10,4 +10,5 @@
         <maven.compiler.release>24</maven.compiler.release>
         <exec.mainClass>com.mycompany.proyecto_base_de_datos.Proyecto_Base_de_datos</exec.mainClass>
     </properties>
+    <name>Proyecto_Diseño_de_algoritmos</name>
 </project>
