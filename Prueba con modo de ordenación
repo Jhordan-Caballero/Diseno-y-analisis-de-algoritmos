@@ -1,0 +1,22 @@
+public static void main(String[] args) {
+        
+        Pasajero pasajero1 = new Pasajero(1, "Pedro Pérez");
+        Pasajero pasajero2 = new Pasajero(2, "Ana López");
+
+        
+        Vuelo vuelo1 = new Vuelo(1, "Madrid", 10);
+        Vuelo vuelo2 = new Vuelo(2, "Barcelona", 0);
+
+        List<Reserva> reservas = new ArrayList<>();
+
+     
+        Aerolinea.registrarReserva(reservas, pasajero1, vuelo1, "2025-08-25");
+        Aerolinea.registrarReserva(reservas, pasajero2, vuelo2, "2025-08-26");
+
+        List<Vuelo> vuelosDisponibles = Aerolinea.obtenerVuelosDisponibles(List.of(vuelo1, vuelo2));
+        System.out.println("Vuelos disponibles:");
+        for (Vuelo vuelo : vuelosDisponibles) {
+            System.out.println("Vuelo a: " + vuelo.destino);
+        }
+        Aerolinea.cambiarVuelo(reservas.get(0), vuelo2); 
+    }
