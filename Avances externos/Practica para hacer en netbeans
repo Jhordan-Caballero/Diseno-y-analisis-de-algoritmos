@@ -1,0 +1,35 @@
+class Vuelo {
+    int id;
+    String destino;
+    int disponibilidad;
+    
+    public Vuelo(int id, String destino, int disponibilidad) {
+        this.id = id;
+        this.destino = destino;
+        this.disponibilidad = disponibilidad;
+    }
+}
+
+class Reserva {
+    int id;
+    Pasajero pasajero;
+    Vuelo vuelo;
+    String fechaReserva;
+    
+    public Reserva(int id, Pasajero pasajero, Vuelo vuelo, String fechaReserva) {
+        this.id = id;
+        this.pasajero = pasajero;
+        this.vuelo = vuelo;
+        this.fechaReserva = fechaReserva;
+    }
+}
+
+class Pasajero {
+    int id;
+    String nombre;
+    
+    public Pasajero(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+}
