@@ -13,7 +13,7 @@ public class Pasajero implements Comparable<Pasajero> {
     private String nombre;
     private String apellido;
     private int numeroAsiento;
-    private String clase; // "Economica", "Ejecutiva", "Primera"
+    private String clase; 
 
     public Pasajero(String nombre, String apellido, int numeroAsiento, String clase) {
         this.nombre = nombre;
@@ -22,7 +22,6 @@ public class Pasajero implements Comparable<Pasajero> {
         this.clase = clase;
     }
 
-    // Para ordenar por apellido (orden natural)
     @Override
     public int compareTo(Pasajero otro) {
         return this.apellido.compareTo(otro.apellido);
@@ -33,7 +32,7 @@ public class Pasajero implements Comparable<Pasajero> {
         return apellido + ", " + nombre + " - Asiento: " + numeroAsiento + " (" + clase + ")";
     }
 
-    // Getters
+  
     public String getNombre() { return nombre; }
     public String getApellido() { return apellido; }
     public int getNumeroAsiento() { return numeroAsiento; }

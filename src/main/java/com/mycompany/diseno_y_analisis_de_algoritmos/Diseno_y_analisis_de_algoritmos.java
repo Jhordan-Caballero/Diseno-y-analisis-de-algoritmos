@@ -17,7 +17,7 @@ public class Diseno_y_analisis_de_algoritmos {
 
     public static void main(String[] args) {
  
-        // Crear lista de pasajeros para un vuelo
+        
         List<Pasajero> pasajeros = Arrays.asList(
             new Pasajero("Ana", "García", 15, "Economica"),
             new Pasajero("Carlos", "Martínez", 3, "Ejecutiva"),
@@ -30,14 +30,12 @@ public class Diseno_y_analisis_de_algoritmos {
         System.out.println("=== LISTA ORIGINAL DE PASAJEROS ===");
         imprimirPasajeros(pasajeros);
 
-        // 1. TIMSORT POR ORDEN NATURAL (por apellido - implementado en compareTo)
-        // Collections.sort() usa TimSort por defecto en Java
         Collections.sort(pasajeros);
         
         System.out.println("\n=== PASAJEROS ORDENADOS POR APELLIDO (Timsort) ===");
         imprimirPasajeros(pasajeros);
 
-        // 2. TIMSORT CON COMPARATOR PERSONALIZADO (por número de asiento)
+   
         Collections.sort(pasajeros, new Comparator<Pasajero>() {
             @Override
             public int compare(Pasajero p1, Pasajero p2) {
@@ -48,16 +46,16 @@ public class Diseno_y_analisis_de_algoritmos {
         System.out.println("\n=== PASAJEROS ORDENADOS POR NÚMERO DE ASIENTO ===");
         imprimirPasajeros(pasajeros);
 
-        // 3. TIMSORT CON COMPARATOR MÚLTIPLE (por clase y luego por apellido)
+ 
         Collections.sort(pasajeros, new Comparator<Pasajero>() {
             @Override
             public int compare(Pasajero p1, Pasajero p2) {
-                // Primero por clase (orden personalizado)
+            
                 int comparacionClase = prioridadClase(p1.getClase()) - prioridadClase(p2.getClase());
                 if (comparacionClase != 0) {
                     return comparacionClase;
                 }
-                // Si misma clase, ordenar por apellido
+                
                 return p1.getApellido().compareTo(p2.getApellido());
             }
             
@@ -74,13 +72,9 @@ public class Diseno_y_analisis_de_algoritmos {
         System.out.println("\n=== PASAJEROS ORDENADOS POR CLASE Y APELLIDO ===");
         imprimirPasajeros(pasajeros);
 
-        // 4. Ejemplo adicional: ordenar con expresión lambda (Java 8+)
-        System.out.println("\n=== PASAJEROS ORDENADOS POR NOMBRE (con lambda) ===");
-        Collections.sort(pasajeros, (p1, p2) -> p1.getNombre().compareTo(p2.getNombre()));
-        imprimirPasajeros(pasajeros);
     }
 
-    // Método auxiliar para imprimir la lista de pasajeros
+    
     private static void imprimirPasajeros(List<Pasajero> pasajeros) {
         for (Pasajero pasajero : pasajeros) {
             System.out.println(pasajero);
