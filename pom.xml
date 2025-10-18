@@ -16,6 +16,15 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     
+    <dependencies>
+        <!-- Conector JDBC de SQL Server compatible con Java 8 -->
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>13.2.0.jre8</version>
+        </dependency>
+    </dependencies>
+    
     <build>
         <plugins>
             <plugin>
