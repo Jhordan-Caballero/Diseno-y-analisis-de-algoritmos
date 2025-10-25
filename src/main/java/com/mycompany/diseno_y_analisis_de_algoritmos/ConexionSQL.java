@@ -21,7 +21,7 @@ public class ConexionSQL {
         String pass = "12345";      
 
         try (Connection con = DriverManager.getConnection(url, user, pass)) {
-            System.out.println("✅ Conexión exitosa a SQL Server");
+            System.out.println(" Conexión exitosa a SQL Server");
 
             String query = "SELECT TOP 5 * FROM Clientes";  
             Statement st = con.createStatement();
@@ -33,7 +33,7 @@ public class ConexionSQL {
             }
 
         } catch (Exception e) {
-            System.out.println("❌ Error al conectar o leer la base de datos:");
+            System.out.println(" Error al conectar o leer la base de datos:");
             e.printStackTrace();
         }
     }
